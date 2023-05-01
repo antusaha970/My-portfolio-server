@@ -14,6 +14,8 @@ require("dotenv").config();
 
 // Admin Route
 app.use("/", require(path.join(__dirname, "./Routes/Admin/Admin")));
+//Project Route
+app.use("/", require(path.join(__dirname, "./Routes/Project/Project")));
 
 // Root call
 app.get("/", (req, res) => {
