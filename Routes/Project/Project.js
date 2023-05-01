@@ -14,4 +14,14 @@ router.put("/add/project", async (req, res) => {
   }
 });
 
+router.get("/resources/projects", async (req, res) => {
+  try {
+    const projectData = await ProjectCollection.find();
+    res.status(200).send(projectData);
+  } catch (error) {
+    console.log(error);
+    res.status(404).send(error);
+  }
+});
+
 module.exports = router;
