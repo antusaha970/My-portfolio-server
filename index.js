@@ -12,6 +12,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(cors());
 require("dotenv").config();
+express.static(path.join(__dirname, "./resources"));
 
 // connect to database
 mongoose.connect(
@@ -22,6 +23,11 @@ mongoose.connect(
 app.use("/", require(path.join(__dirname, "./Routes/Admin/Admin")));
 //Project Route
 app.use("/", require(path.join(__dirname, "./Routes/Project/Project")));
+//Resource Route
+app.use(
+  "/",
+  require(path.join(__dirname, "./Routes/ViewResource/ViewResource"))
+);
 
 // Root call
 app.get("/", (req, res) => {
