@@ -23,6 +23,8 @@ mongoose.connect(
 app.use("/", require(path.join(__dirname, "./Routes/Admin/Admin")));
 //Project Route
 app.use("/", require(path.join(__dirname, "./Routes/Project/Project")));
+//Message Route
+app.use("/", require(path.join(__dirname, "./Routes/Contact/Contact")));
 //Resource Route
 app.use(
   "/",
