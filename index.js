@@ -25,11 +25,6 @@ app.use("/", require(path.join(__dirname, "./Routes/Admin/Admin")));
 app.use("/", require(path.join(__dirname, "./Routes/Project/Project")));
 //Message Route
 app.use("/", require(path.join(__dirname, "./Routes/Contact/Contact")));
-//Resource Route
-app.use(
-  "/",
-  require(path.join(__dirname, "./Routes/ViewResource/ViewResource"))
-);
 
 // Root call
 app.get("/", (req, res) => {
