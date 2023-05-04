@@ -24,4 +24,17 @@ router.get("/resources/projects", async (req, res) => {
   }
 });
 
+router.delete("/resources/delete", async (req, res) => {
+  const id = req.query.id;
+  try {
+    const result = await ProjectCollection.deleteOne({ _id: id });
+    if (result.acknowledged) {
+      res.status(200).send(true);
+    }
+  } catch (error) {
+    console.log(error);
+    res.status(404).send(error);
+  }
+});
+
 module.exports = router;

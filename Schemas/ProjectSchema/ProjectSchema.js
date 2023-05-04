@@ -6,6 +6,7 @@ const projectSchema = new mongoose.Schema({
   techStack: String,
   liveLink: String,
   githubLink: String,
+  imageLink: String,
 });
 
 const ProjectCollection = mongoose.model("projectCollection", projectSchema);
